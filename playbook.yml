@@ -1,0 +1,8 @@
+- name: Bootstrap Local Machine
+  hosts: servers
+  become: no
+
+  roles:
+    - common
+    - security
+    - docker

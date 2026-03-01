@@ -1,0 +1,14 @@
+- name: Check Docker installation
+  command: docker --version
+  register: docker_check
+  ignore_errors: yes
+
+- name: Docker exists
+  debug:
+    msg: "Docker is already installed"
+  when: docker_check.rc == 0
+
+- name: Docker missing
+  debug:
+    msg: "Install Docker manually on macOS"
+  when: docker_check.rc != 0

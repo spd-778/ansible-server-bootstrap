@@ -1,0 +1,8 @@
+- name: Install basic tools using Homebrew
+  homebrew:
+    name:
+      - git
+      - curl
+      - wget
+      - htop
+    state: present
